@@ -1,0 +1,49 @@
+---------- Today's Lab --------
+---------- Fuzzy Logic -----------
+Real world logic kokhono emon hobe na, true or false or somthing. 
+Hard computing follow korte pari na jekhane, (say 79 je paise, oita amra A+ kore dei) uncertainatiy use kore jekhane, oita ke bole fuzzy logic.
+Fuzzy works with continuous value, Uncertainity.
+
+
+Say 0 and 255, fuzzy wise ke 0 er kacha kachi, or ke 255 er kacha kachi, egula niye kaaj kore.
+
+Inference rule: Expert der knowledge gula ke incorporate kori. 
+          ----- Mamdani style fuzzy inference.
+Fuzzy usually works with linguistic values, fuzzy numerical value niye khub ekta kaaj kore na.
+
+Step -1 : Input hishebe numerical value dibo, then ei numerical ta ke ekta fuzzy state e convert korbo. 
+          In case of fuzzy, prottek ta point prottek ta set e belong kore.
+          This is known as degree of membership.
+Degree of truth --- eki sathe ekadhik set e belong kora.
+
+---- alada distribution hole data kivabe kaaj korbe, etao ekta research. -----------
+
+Universal Disclose:s
+--- Please remember --- Membershp and probability, these two are not same. 
+---
+
+
+--------------- Project based Membership joto barbe, toto oi class e belong korbe.
+-------------- Dui ta numerical value chilo, fuzzy the conver korlam.
+-------------- 
+
+
+fuzzy er case e dhore nibo eksathe shob work out korbe.
+At the same time dhore nibo je improvise korbo. Fuzzy er case e ei prottek ta rule true.
+Ei rule gular first ke bole antecedent.
+
+----------- Or er case e duitar moddhe meax --------------
+----------- And er case e duitar moddhe min --------------
+
+If er
+
+Refuzzification --- 
+
+We apply coG in this case, emon ekta mas.
+
+integration kora hoy successive summation diye.
+
+
+--------- Next class e given class work is assignment, then this code should be printed and attached
+with lab report 
+

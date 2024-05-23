@@ -1,0 +1,100 @@
+NLP introduction
+
+Mainly je library dekhbo: Dataset Library.
+----------------------
+
+Data Collection: Two type of Library.
+Data preprocessing.
+Toeknization.
+
+Sentence Tokenization / Word tokenization.
+Shobcheye beshi use hoy -- subword Tokenization.
+Transformer e tokenization change hoy --- ML model e text data ke numeraical value te (vector) e convert kore.
+Ei case different type of algorithm ase
+
+Sub Word bolte kii bujhay? --- Same word ke dui ta part e divide korte hobe. 
+Numerical value te convert kore, subword tokenization.
+Numerical value to text then.
+Tokenizer design korar shomoy encode and decode both thakte hobe.
+
+
+Lemmatization*** (It is very much important) // Stemmer.
+
+do, does, done, did --> do (what does they do, they convert it to root word)
+
+Lemmitization er performence bhalo, stemmer er performence ektu kharap. Why?
+ans: Stemmer just suffix remove kore. At the same time oita space o kom dey. Lemmitization full word to word mapping kore.
+
+do, does, done, did --> do
+
+stemmer onk shomoy exceptional dataset create kore rakhe, oigula use kore correct kore rakhe.
+
+
+Lemmatition and stemmer classififcation e onk bhalo kaaj kore as word to word comparison kore thake.
+
+--------- Let's review dataset library -------------
+
+Dataset er big issue holo big data niye kaaj korle problem hoy.
+
+Dataset handle korar jonno library thaka uchit jekhane efficiently dataset handle kora jay.
+Dataset library niye multiprocess support kore emon jaygay jawa uchit.
+
+Huggingface e dataset process e jabo.
+
+Data process er case e ei library ta best.
+
+Dataset Library: (it works with text, audio, image and other dataset) very useful for multimedia dataset.
+
+---- Download datasets from hugging face ------
+
+Shard library ta onk important. Colab er GPU holo tesla t4 -- nvidia total 16 GB ram.
+We have to know how to Optimizae GPU.
+
+What is the main purpose of shard. Small GPU takes away main the vram. As a result we can not fully use.
+Say model 10 GB niye gelo. Again we need some for Data. Tensor e convert korleo GPU use hoy. Out of memory dekhay.
+Out of memory theke bachar jonno amra dataset ta komay dey, in this case shard ta kaaje laage, shard dataset ke bhag kore dey, no special programming is required for this purpose'
+
+
+Model ta ke train korbo, test korbo, new shard diye bhag korbo, again train and test korbo.
+
+at times we have to select the column. 
+
+then we have to use cast_column() --- It is used to convert from one format to another.
+
+class label ta ekhane bole deya ase, so it is beneficial.
+
+-------------------------- Flatten: ----------------------------------
+
+Dataset flatten kore training e use kora jaabe.
+
+-------------- Map -----------
+Shob cheye beshi useful, eta diye jekono kisu kora jay, map diye multiprocessing support kore. map() function --- eta diye ___ handling khub easily kora jaabe.
+sir emphasized on map, collet the code
+--------------------------------------------
+then zipped adnd did something sir, again collect the code
+
+---------- Augmentation sir apatoto porachhe na, sir er kaaj holo data preprocessing, how to handle data egula dekhano, another thing is data concatanating kora
+How to concatanate? -- check things out first.
+
+
+------------- Another thing is interleave. --- deciding which dataset to use and how much. ------
+------------- format, how to use format ---
+Dataset format different type -- for example it is in tensor formaat then we will convert it into torch
+just see it.
+
+---------------------------------------------------------------------------------- Lastly --------------------
+after creatubg dataset, we have to save the dataset, that is called saved.dataset()
+similarly dataset can be lodaded fromm using library --- check the code given as sample
+
+
+---- try to use this is on own pc, instead of using from colab, will teach many thigs.
+
+
+---------------------- Text generation theke jekono dataset nibo, then je gula 
+                            --- 10 words er kom ase, oigula baad.
+                           ---- punctuation remove korbo, (using map)
+                           ---- shard e bhag korbo, then map apply kore, stop word remove korbo, then dataset save korbo.
+
+---- Assignment, next class e korte hobe -----
+
+

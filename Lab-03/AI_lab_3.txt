@@ -1,0 +1,50 @@
+import numpy as np
+import skfuzzy as fuzz
+from skfuzzy import control as ctrl
+
+# Define input and output variables
+ambient_light = ctrl.Antecedent(np.arange(0, 501, 1), 'ambient_light')
+user_preference = ctrl.Antecedent(np.arange(0, 101, 1), 'user_preference')
+brightness = ctrl.Consequent(np.arange(0, 101, 1), 'brightness')
+
+# Define membership functions for Ambient Light
+ambient_light['dark'] = fuzz.trimf(ambient_light.universe, [0, 0, 50])
+ambient_light['dim'] = fuzz.trimf(ambient_light.universe, [40, 150, 500])
+ambient_light['bright'] = fuzz.trimf(ambient_light.universe, [100, 500, 500])
+
+# Define membership functions for User Preference
+user_preference['dim'] = fuzz.trimf(user_preference.universe, [0, 30, 60])
+user_preference['low'] = fuzz.trimf(user_preference.universe, [20, 50, 80])
+user_preference['medium'] = fuzz.trimf(user_preference.universe, [40, 70, 100])
+user_preference['high'] = fuzz.trimf(user_preference.universe, [60, 90, 100])
+user_preference['bright'] = fuzz.trimf(user_preference.universe, [80, 100, 100])
+
+# Define membership functions for Brightness
+brightness['dim'] = fuzz.trimf(brightness.universe, [0, 0, 50])
+brightness['low'] = fuzz.trimf(brightness.universe, [20, 50, 80])
+brightness['medium'] = fuzz.trimf(brightness.universe, [40, 70, 100])
+brightness['high'] = fuzz.trimf(brightness.universe, [60, 90, 100])
+brightness['bright'] = fuzz.trimf(brightness.universe, [80, 100, 100])
+
+# Define fuzzy rules
+rule1 = ctrl.Rule(ambient_light['dark'] & user_preference['dim'], brightness['dim'])
+rule2 = ctrl.Rule(ambient_light['dark'] & user_preference['low'], brightness['low'])
+rule3 = ctrl.Rule(ambient_light['dim'] & user_preference['low'], brightness['dim'])
+rule4 = ctrl.Rule(ambient_light['dim'] & user_preference['medium'], brightness['medium'])
+rule5 = ctrl.Rule(ambient_light['bright'] & user_preference['bright'], brightness['bright'])
+
+# Create control system
+fuzzy_ctrl = ctrl.ControlSystem([rule1, rule2, rule3, rule4, rule5])
+light_ctrl = ctrl.ControlSystemSimulation(fuzzy_ctrl)
+
+# Input values (ambient_light and user_preference)
+light_ctrl.input['ambient_light'] = 100
+light_ctrl.input['user_preference'] = 70
+
+# Compute the result
+light_ctrl.compute()
+
+# Get the defuzzified output using the Mamdani-style method
+defuzzified_brightness_mamdani = fuzz.defuzz(brightness.universe, light_ctrl.output['brightness'], 'centroid')
+
+print("Defuzzified Brightness (Mamdani):", defuzzified_brightness_mamdani)

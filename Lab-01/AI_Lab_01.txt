@@ -1,0 +1,161 @@
+alan turing er time theke AI er kaaj shuru hoise.
+
+Project:
+Will try to design intelligent agent. Will try to design a game. Can not call ai using api, we have to design the AI ourselves. Visual and sound dekhte kmn, eta matter kore na right now.
+Algorithm cover kora hochhe kina sheta ensure korte hobe. Api call kore kora jaabe na ( plus unity er game ) 
+
+. Todays class:
+
+so far bfs and dfs egula te distance measure kora hoy. Amra additional info jani na, only weight, kotha theke shuru and shesh egula. Blind search egula, amar kache je info ache ta baade
+additional kono information nai. 
+
+Heuristic strategy: Non Goal, but onno gular cheye ....
+
+Maze example ( slide ).
+2nd maze er jonno easy, first maze tough, blind strategy te eta dhora jay na. 
+
+BFS:
+Fringe -- array te kon node er kon node expand korbo, sheta jekhane deya thaake, oita fringe.
+( start node and goal node, duitar jonno dui ta alada node maintain korbo ) -- BiDirectional BFS
+
+(clear it out, bidirectional BFS)
+
+DFS strategy:
+problem: Ekta sub tree pura expand shesh kore onno subtree choose kore. Sub tree te dhukle time limit shesh hoye jaache (subtree boro), eta ke overcome kora hoy, depth limtied strategy.
+
+
+BFS vs DFS:
+BFS -- Level by level by aagai, pawa ta easier. (place onk beshi ney, space complexity onk beshi)
+DFS -- Always leaf node dekhi, (say 2nd level e ase ans) so shortest na o hote pare.
+
+(merging the facilities of both BFS and DFS)
+IDS: (iterative deepening search)
+Say G goal node, k er value level ke denote kore. Per tree te amra DFS call korbo.
+(subidha: Protibar 1 ta DFS use kortesi, 1 ta DFS er memory laagbe, so space save hobe.
+osubidha: Time beshi laage.)
+
+
+
+Uniform Cost Strategy:
+In this case, shobar cost same na. every path has different cost. 
+
+
+specific domain er knowledge --- eta ke bola hoy heuristic knowledge.
+heuristic knowledge is generally an assumption, never an accurate knowledge. (concrete information hole amra direct graph er formula use korte partam)
+
+
+Evaluation function:
+say distance measure er ta, evaluation function ---  (clear it out)
+
+point theke palano goal hole amra evaluation function ke maximize korbo.
+
+
+
+Informed search: (problem specific -- 
+
+
+
+n state heuristic function ke h(N) diye express kora hoy. 
+
+g(N) --- start node theke end node e ashar jonno actually koto node cover korte hochhe
+h(N) --- (clear it out) -- Heuristic function.
+
+(collect pic from nasib)
+
+
+
+greedy best-first search, evaluation function gula aage dekhbo. 
+
+Graph e search korbo lowest value koi ache. Slide er problem reference. (calculate korle dekhbo eta shobshomoy shortest path dey na)
+
+
+Greedy best first search ---- etar problem amra ekhane kono actual value consideration e antesi na, ejonno A* search amra use kori. 
+ekhane heuristic assumption + actual cost assumption -- dui tai consideration e neya hoy. 
+
+A* search ---
+ei case e jetar evaluation shobcheye kom, oita ke expand korbo amra. 
+A* greedy best er cheye optimal result dey.
+
+A* uniform search er ekta extended version --- 
+
+
+say ami majhe achi, majh theke piche asi eta g(n) and majhkhan theke shamne point e ja jabo, oita h(n) 
+
+Salim sir er github e giye  heuristic er oita dekhbo -- (blind uninfromed) 
+
+explain --- graph1 --- kotha theke kothay jawa jay, sheta dewa ase. 
+hsld == heuristic value koto hote pare.
+graph2 == prottel tar h er value ta deya 
+
+fringe -- 
+start and destination deya holo. 
+gn[x] --- graph er shobgula point deya ase in this case.
+shobgula initialize kore nisi (value 0 diye dibo) 
+
+lowest value neyar jonno list kore sort kore then oitar first element ta nibo.
+
+8-puzzle eo same approach neya hoise.
+
+heuristic --- kokhono overestimate kore na (say actual value 10, heurisitc kokhono 12 dbe na, either 10 or less than 10 
+graph jemon e houk, always optimal result dibe. 
+
+
+IDA* search tree amra use korte pari. A* and IDA er duitar concept niye mixed eta.
+
+--- (node er value er kisu ekta missed out --- clear it out) 
+
+thereshold (fn er value jar cheye beshi value amra nite parbo na )
+
+threshold 2, 2 er cheye 4 and 5 boro, tai 4 and 5 baad diye dibo (visited node er moddhe diye dibo) 
+threshold value gula 2nd bar evaluate korbo, minimum value chilo 4, tai threshold value hobe 4. 
+threshold er cheye boro holo expand kora jaabe na. (visited node e diye dibo baad bujhanor jonno ) 
+jokhon ar expand kora jaabe na, then visited er moddhe lowest value ke new threshold banay shuru theke kaaj korbo. (ei case e 5 hoye then ) 
+
+quiz e small simulation ashte pare. 
+--------- iterative including, hill climbing algorithm --- egula maam cover korte pare nai, project e use korar jonno amra use korte pari --- swarm optimization, ant colony optimization ---
+jetai kori na keno, raw code diye korte hobe. music graphic egula maam care korben na, opponent(agent) strong holei hobe. 
+
+
+IDA* e space bachay A* er cheye ( space er dik diye optimality prove kore ei  algorithm) 
+Inital value and intermediate value -- 
+
+
+
+Basic python -- 
+Github theke copy paste kora jaabe na. 
+VS code. use korbi. Kaggle and colab use kora jeete pare, 
+
+
+how to setup environment system. 
+
+Python install korar por. 
+anaconda install korar por -- 
+
+conda create -n env python=3.8
+
+(joto library use korbo, shob gula base e thakte hbe)
+
+then env activate korar jonno --  (say ai holo amar environment ) 
+conda activate ai 
+
+now ei env e numpy install korte chaile, pip install numpy
+
+-q dile ami ki install kortesi oita dekhay na ar.
+
+
+python e error hobe array er case e. 
+
+Lab report joma dite hobe. reference e chatgpt open ai egula deya jabe na. 
+project er idea dite hobe. 
+.75 credit er lab. 
+project --- individual howar possibility beshi. 
+
+
+
+
+ 
+
+
+
+
+

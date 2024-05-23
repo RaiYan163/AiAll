@@ -1,0 +1,49 @@
+Today's Topic --- Game Theory.
+
+-------------- Game_Theory_concept ---------------------
+Two player will play games. My Target and goals, some criteria and condition will be said. In last there will be a terminal condition. We have to use the game.
+Who will win, last e je nibe. at first two sticks are taken. 
+
+-- There are some condition as well as some terminal condition. 
+What are the states? 
+--- 0 to 10 any one (example in slide: the stick one)
+
+-------------- Game_Playing_concept1 ------------------- 
+
+
+
+slide --- game playing -----
+
+1. Perfect two-player Game.
+   Max and Min.
+
+example: Grundy's Game.
+Example: Partial Tree for Tic-Tac-Toe
+
+---The path, following which, our winning probability will be increased.
+--- Games er tree small korar jonno algorithm use kora hoy, that is Alpha beta pruning. 
+
+--------------- Slide Min Max algorithm in Artificial Intelligence ---------------
+
+--------- Alpha Beta Pruning ---------------
+Pruning kore search tree choto kore fela.
+
+Alpha beta value propagate kore niche namte pare, but upore dike uthte pare na, upore uthte pare node er value.
+
+------------ Important for quizz -----------------
+initially, alpha = minus inf, beta = + if
+(javatpoint)
+
+niche propagate korbo.
+
+if alpha > beta --- then oi subtree ar use korbona, oita remove kore dite hobe.
+What is the value in D?
+
+Terminal value can go upwards.
+
+-------- Clear this out (problematic) 
+
+
+How to install tensorflow and pytorch.
+------------------------ Todays Work -------------
+
